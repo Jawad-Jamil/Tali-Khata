@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tali Khata</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+<body>
+    <section class="preloader_wrapper">
+        <img src="Images/preloader.jpg">
+    </section>
+
+    <section class="create_acc">
+        <div class="create_acc_wrapper">
+            <div class="logo_acc"><img src="Images/create_acc_logo.jpg"></div>
+
+            <div class="crt_acc_h4"> <h4>ব্যবহার শুরু করুন</h4></div>
+
+            <div class="crt_acc_p"> <p>ব্যবহার শুরু করতে বা লগ ইন করতে মোবাইল নম্বর দিন</p></div>
+        <form action="#">
+            <div class="crt_acc_num">
+                <input class="text_crt_acc" type="text" min="3" max="60">
+                <span class="crt_placeholder" id="text_placeholder">ব্যবসা প্রতিষ্ঠানের নাম</span>
+
+                <input class="number_crt_acc" type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;" />
+                <span class="crt_placeholder" id="num_placeholder">মোবাইল নম্বর</span>
+            </div>
+
+            <div class="crt_submit">
+                <button id="crt_sub_btn" type="button">পরবর্তী</button>
+            </div>
+            <div class="crt_ruls"><p>পরবর্তীতে যাওয়ার নির্দেশের মাধ্যমে আপনি টালিখাতার <span>শর্তাবলীতে</span> সম্মতি প্রদান করছেন।</p></div>
+            <div class="log_bottom crt_ruls"><p>আমি ইতিমধ্যে টালিখাতা ব্যবহার করেছি ।</p></div>
+        </form>
+        </div>
+    </section>
+
+    <section class="set_pin">
+        <div class="set_pin_logo"><img src="Images/pin_logo.png"></div>
+        <div class="set_pin_text"><p>আপনার তথ্য সুরক্ষিত রাখতে ডিজিট PIN তৈরি করুন ।</p></div>
+
+        <div class="set_pin_inp_wrapper">
+            <input id="pin_inp1" class="pin_inp" type="password" min="3" max="20">
+            <span id="pin_placeholder1" class="pin_placeholder">পিন দিন</span>
+            <span class="show_hide show_hide1"><i class="fas fa-eye-slash eye"></i></span>
+
+            <input id="pin_inp2" class="pin_inp" type="password" min="3" max="20">
+            <span id="pin_placeholder_again" class="pin_placeholder_again pin_plcholder">পুনরায় পিন দিন</span>
+            <span class="show_hide show_hide2"><i class="fas fa-eye-slash eye"></i></span>
+        </div>
+
+        <div class="pin_submit">
+            <button id="pin_sub_btn" class="pin_sub_btn" type="button">পরবর্তী</button>
+        </div>
+
+        <div class="crt_ruls"><p>পরবর্তীতে যাওয়ার নির্দেশের মাধ্যমে আপনি টালিখাতার <span>শর্তাবলীতে</span> সম্মতি প্রদান করছেন।</p></div>
+    </section>
+
+
+    <section class="home_sec">
+        <div class="home_wrapper">
+
+            <div class="header_home">
+
+                <div class="left_header_home">
+                    <div class="head_bar_wrapper"><i id="header_bar" class="fas fa-align-left"></i></div>
+                    <div class="head_name"><h4 id="data_name_taker"></h4></div>
+                </div>
+
+                <div class="head_help_wrapper">
+                    <div class="help_what"><p>?</p></div>
+                    <div class="help_text">হেল্প</div>
+                </div>
+
+            </div>
+
+
+            <div class="content_home">
+                <div class="home_features">
+                    <div class="tips_features">
+                        <div class="left_man"><i class="fas fa-user-plus"></i></div>
+                        <div class="right_text">হিসাবের খাতা থেকে কাস্টমার ও সাপ্লায়ার যোগ করুন।</div>
+                    </div>
+
+                    <div class="features">
+                        <div class="feature_item1">
+                            <div class="f_item1_left"><i class="far fa-envelope"></i></div>
+                            <div class="f_item1_txt">প্রতিটি লেনদেনে ফ্রি এসএমএস এর সুবিধা নিন।</div>
+                        </div>
+
+                        <div class="feature_item2">
+                            <div class="f_item2_left"><i class="far fa-clock"></i></div>
+                            <div class="f_item2_txt">তাগাদা মেসেজ পাঠান</div>
+                        </div>
+
+                        <div class="watch_video">
+                            <a target="_blank" href="https://youtube.com/">
+                                <i class="fab fa-youtube"></i>
+                                <div class="video_txt">ভিডিও দেখুন</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="add_customer">
+                    <div class="left_man"><i class="fas fa-user-plus"></i></div>
+                    <div class="right_text">কাস্টমার যোগ করি</div>
+                </div>
+
+            </div>
+
+            <div class="footer_home">
+                <div class="tally_foot footer_item">
+                    <i class="fas fa-address-book"></i>
+                    <p>ট্যালি</p>
+                </div>
+
+                <div class="cash_foot footer_item">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <p>ক্যাশ</p>
+                </div>
+
+                <div class="inbx_foot footer_item">
+                    <i class="fas fa-inbox"></i>
+                    <p>ইনবক্স</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section class="left_menu_sec">
+        <div class="left_menu">
+
+            <div class="left_menu_wrapper">
+    
+                <div class="profile_info_wrapper">
+    
+                    <div class="round_short_name"></div>
+    
+                    <div class="prof_name_num">
+                        <div class="store_name"></div>
+                        <div class="store_num"> </div>
+                    </div>
+    
+                    <i class="fas fa-pen"></i>
+                </div>
+    
+                <div class="left_menu_ul_wrapper">
+                    <ul>
+                        <li>হোম</li>
+                        <li>শিওরক্যাশ ওয়ালেট</li>
+    
+                        <h6>হিসাব বিবরণী</h6>
+                        <li>বেচা-কেনা</li>
+                        <li>খরচ</li>
+                        <li>ক্যাশ হিসাব</li>
+                        <li>বাকি হিসাব</li>
+    
+                        <h6>অন্যান্য</h6>
+                        <li>ডাটা ব্যাকআপ</li>
+                        <li>তাগাদা পাঠাই</li>
+                        <li>সেটিংস</li>
+                        <li>PIN পরিবর্তন</li>
+                        <li>রেফার করুন</li>
+                        <li id="log_out">ডিলিট একাউন্ট <span><i class="fas fa-sign-out-alt"></i></span></li>
+                    </ul>
+                </div>
+    
+    
+                <div class="left_menu_bottom d-flex justify-content-between">
+                    <div><img src="Images/create_acc_logo.jpg" alt="pic"></div>
+                    <span>ভার্সন - ৩.০.৩</span>
+                </div>
+    
+            </div>
+        </div>
+    
+        <div class="overlay"></div>
+    </section>
+
+
+    <section class="help_support_sec">
+        <div class="home_left_help">
+
+                <div class="hm_left_head">
+                    <i id="back_support" class="fas fa-arrow-left"></i>
+                    <h4>হেল্প</h4>
+                </div>
+
+            <div class="home_top_wrapper">
+                    <div class="help_top_img">
+                        <a href="http://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+                            <div class="help_top_txt">
+                                <h5>দোকানের হিসাব রাখার সেরা অ্যাপ</h5>
+                                <p>বিভিন্ন ব্যাবহার দেখতে ক্লিক করুন</p>
+                            </div>
+
+                            <div class="yt_wrapper"><img class="yt_logo" src="Images/yt.png"></div>
+
+                            <img class="help_phone_pic" src="Images/help_phone.png" alt="">
+                        </a>
+                    </div>
+
+                    <div class="live_support"><img src="Images/live_supprt.jpg"></div>
+            </div>
+
+            <div class="ul_wrapper">
+                <h5>ব্যাবহার বিষয়ক প্রশ্ন ও উত্তর</h5>
+
+                <ul id="help_ul">
+                    <li>
+                        <div class="li_wrapper">
+                            <div class="li_head clicked_head">
+                                <h6 class="left_txt">টালিখাতায় কি কি করা যায় ?</h6>
+                                <i class="fas fa-angle-right p_active_icon"></i>
+                            </div>
+                    
+                            <p class="invisible_p clicked_p">
+                                অর্থহীন লেখা যার মাঝে আছে অনেক কিছু। হ্যাঁ, এই লেখার
+                                মাঝেই আছে অনেক কিছু। যদি তুমি মনে করো, এটা তোমার কাজে
+                                লাগবে, তাহলে তা লাগবে কাজে। নিজের ভাষায় লেখা দেখতে
+                                অভ্যস্ত হও। মনে রাখবে লেখা অর্থহীন হয়, যখন তুমি তাকে
+                                অর্থহীন মনে করো; আর লেখা অর্থবোধকতা তৈরি করে, যখন তুমি
+                                তাতে অর্থ ঢালো। যেকোনো লেখাই তোমার কাছে অর্থবোধকতা তৈরি
+                                করতে পারে, যদি তুমি সেখানে অর্থদ্যোতনা দেখতে পাও।
+                                …ছিদ্রান্বেষণ? না, তা হবে কেন?
+                              </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="new_customer">
+        <div class="customer_header">
+            <i class="fas fa-arrow-left"></i>
+            <h4>নতুন কাস্টমার/সাপ্লায়ার</h4>
+        </div>
+
+        <div class="cus_sup_wrapper">
+            <div class="customer active cus_sup_opt">কাস্টমার</div>
+            <div class="suplier cus_sup_opt">সাপ্লায়ার</div>
+        </div>
+
+        <div class="customer_information">
+
+            <div class="phonebook">
+                <i class="fas fa-address-book"></i>
+                <p>ফোনবুক থেকে যোগ করি</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
