@@ -45,11 +45,11 @@
 
         <div class="set_pin_inp_wrapper">
             <input id="pin_inp1" class="pin_inp inp_for_plc" type="password" min="3" max="20">
-            <span id="pin_placeholder1 plc_for_inp" class="pin_placeholder">পিন দিন</span>
+            <span id="pin_placeholder1" class="pin_placeholder plc_for_inp">পিন দিন</span>
             <span class="show_hide show_hide1"><i class="fas fa-eye-slash eye"></i></span>
 
             <input id="pin_inp2" class="pin_inp inp_for_plc" type="password" min="3" max="20">
-            <span id="pin_placeholder_again plc_for_inp" class="pin_placeholder_again pin_plcholder">পুনরায় পিন দিন</span>
+            <span id="pin_placeholder_again" class="pin_placeholder_again pin_plcholder plc_for_inp">পুনরায় পিন দিন</span>
             <span class="show_hide show_hide2"><i class="fas fa-eye-slash eye"></i></span>
         </div>
 
@@ -115,7 +115,7 @@
             </div>
 
             <div class="footer_home">
-                <div class="tally_foot footer_item">
+                <div class="tally_foot footer_item  foot_actv">
                     <i class="fas fa-address-book"></i>
                     <p>ট্যালি</p>
                 </div>
@@ -243,8 +243,20 @@
 
 
     <section class="new_customer">
+
+        <div class="new_cus_sup_overly new_done_display">
+
+            <div class="new_done_wrapper">
+                <i class="far fa-check-circle"></i>
+                <h6 class="done_name_taker"></h6>
+
+                <button class="done_ok_btn">OK</button>
+            </div>
+            
+        </div>
+
         <div class="customer_header">
-            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-left top_backing_icon"></i>
             <h4>নতুন কাস্টমার/সাপ্লায়ার</h4>
         </div>
 
@@ -253,7 +265,7 @@
             <div class="suplier cus_sup_opt">সাপ্লায়ার</div>
         </div>
 
-        <div class="customer_information">
+        <div class="customer_information cus_sup_info_display">
 
             <div class="phonebook">
                 <i class="fas fa-address-book"></i>
@@ -267,21 +279,54 @@
             </div>
 
             <div class="mobile_cus_wrapper cus_inp_wrappers">
-                <input type="text" class="inp_for_plc">
+                <input type="text" class="cus_num_inp inp_for_plc">
                 <span class="plc_for_inp">মোবাইল নম্বর</span>
                 <i class="fas fa-phone-alt inp_icon"></i>
             </div>
 
 
             <div class="loan_cus_wrapper cus_inp_wrappers">
-                <input type="text" class="inp_for_plc">
+                <input type="text" class="loan_cus_inp inp_for_plc">
                 <span class="plc_for_inp">পূর্বের বাকি (জের)</span>
                 <i class="fas fa-dollar-sign inp_icon"></i>
             </div>
 
-            <button class="">নিশ্চিত</button>
+            <button class="cus_sub_btn">নিশ্চিত</button>
 
         </div>
+
+
+        <div class="supplier_information">
+
+            <div class="phonebook">
+                <i class="fas fa-address-book"></i>
+                <p>ফোনবুক থেকে যোগ করি</p>
+            </div>
+
+            <div class="sup_name_wrapper sup_inp_wrappers">
+                <input class="sup_add_inp inp_for_plc" type="text">
+                <span class="plc_for_inp sup_add_plchold">সাপ্লায়ারের নাম</span>
+                <i class="fas fa-user-plus inp_icon"></i>
+            </div>
+
+            <div class="mobile_sup_wrapper sup_inp_wrappers">
+                <input type="text" class="sup_num_inp inp_for_plc">
+                <span class="plc_for_inp">মোবাইল নম্বর</span>
+                <i class="fas fa-phone-alt inp_icon"></i>
+            </div>
+
+
+            <div class="loan_sup_wrapper sup_inp_wrappers">
+                <input type="text" class="loan_sup_inp inp_for_plc">
+                <span class="plc_for_inp">পূর্বের বাকি (জের)</span>
+                <i class="fas fa-dollar-sign inp_icon"></i>
+            </div>
+
+            <button class="sup_sub_btn">নিশ্চিত</button>
+
+        </div>
+
+
     </section>
 
 

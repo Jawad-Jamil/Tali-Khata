@@ -205,11 +205,6 @@ button.pin_sub_btn{
     @include crt_btn()
 }
 
-button.btn_active{
-    opacity: 1;
-    pointer-events: inherit;
-}
-
 span.show_hide {
     position: absolute;
     right: 20px;
@@ -780,10 +775,61 @@ p.clicked_p{
 section.new_customer{
     position: absolute;
     left: 0;
-    top: 0;
+    top: -120%;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: $white;
+    transition: 0.3s;
+
+    
+    .new_cus_sup_overly {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background-color: #00000099;
+        z-index: 999999;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        .new_done_wrapper {
+            height: 150px;
+            width: 80%;
+            background-color: #ffffff;
+            border-radius: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            i{
+                font-size: 50px;
+                color: #3DC259;
+                padding-bottom: 8px;
+            }
+
+            h6{
+                font-size: 18px;
+                color: #8a8a8a;
+            }
+
+            button{
+                @include crt_btn();
+                opacity: 1;
+                pointer-events: all;
+                width: 30%;
+                height: 30px;
+                border-radius: 5px;
+                font-size: 15px;
+                margin-top: 10px;
+            }
+
+        }
+    }
 
     .customer_header{
         background-color: $head;
@@ -817,8 +863,9 @@ section.new_customer{
         }
     }
 
-    .customer_information{
+    .customer_information , .supplier_information{
         padding: 20px;
+        display: none;
 
         .phonebook{
             @include flex();
@@ -827,6 +874,7 @@ section.new_customer{
             height: 45px;
             border-radius: 25px;
             font-size: 18px;
+            margin-bottom: 20px;
 
             i{
                 padding-right: 10px;
@@ -834,8 +882,7 @@ section.new_customer{
 
         }
 
-        .cus_inp_wrappers{
-            padding: 0px 0px;
+        .cus_inp_wrappers , .sup_inp_wrappers{
             position: relative;
 
             input{
@@ -845,7 +892,7 @@ section.new_customer{
 
             span{
                 @include placeholder_span();
-                top: 14px;
+                top: 13px;
                 left: 50px;
             }
 
@@ -860,7 +907,31 @@ section.new_customer{
 
         }
 
+        .cus_sub_btn , .sup_sub_btn{
+            @include crt_btn();
+            position: absolute;
+            bottom: 30px;
+            left: 20px;
+            width: 90%;
+        }
+
         
     }
 }
 
+button.btn_active{
+    opacity: 1 !important;
+    pointer-events: inherit !important;
+}
+
+.cus_sup_info_display{
+    display: block !important;
+}
+
+section.top_back{
+    top: 0;
+}
+
+.new_done_display{
+    display: none !important;
+}

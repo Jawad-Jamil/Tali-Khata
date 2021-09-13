@@ -180,11 +180,6 @@ button.pin_sub_btn {
   cursor: pointer;
 }
 
-button.btn_active {
-  opacity: 1;
-  pointer-events: inherit;
-}
-
 span.show_hide {
   position: absolute;
   right: 20px;
@@ -899,10 +894,87 @@ p.clicked_p {
 section.new_customer {
   position: absolute;
   left: 0;
-  top: 0;
+  top: -120%;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: #ffffff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+section.new_customer .new_cus_sup_overly {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #00000099;
+  z-index: 999999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.new_customer .new_cus_sup_overly .new_done_wrapper {
+  height: 150px;
+  width: 80%;
+  background-color: #ffffff;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+section.new_customer .new_cus_sup_overly .new_done_wrapper i {
+  font-size: 50px;
+  color: #3DC259;
+  padding-bottom: 8px;
+}
+
+section.new_customer .new_cus_sup_overly .new_done_wrapper h6 {
+  font-size: 18px;
+  color: #8a8a8a;
+}
+
+section.new_customer .new_cus_sup_overly .new_done_wrapper button {
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 45px;
+  border-radius: 10px;
+  background-color: #cf2128;
+  color: #ffffff;
+  font-size: 20px;
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: pointer;
+  opacity: 1;
+  pointer-events: all;
+  width: 30%;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-top: 10px;
 }
 
 section.new_customer .customer_header {
@@ -963,11 +1035,12 @@ section.new_customer .cus_sup_wrapper .active {
   border-bottom: 4px solid #cf2128;
 }
 
-section.new_customer .customer_information {
+section.new_customer .customer_information, section.new_customer .supplier_information {
   padding: 20px;
+  display: none;
 }
 
-section.new_customer .customer_information .phonebook {
+section.new_customer .customer_information .phonebook, section.new_customer .supplier_information .phonebook {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -988,18 +1061,18 @@ section.new_customer .customer_information .phonebook {
   height: 45px;
   border-radius: 25px;
   font-size: 18px;
+  margin-bottom: 20px;
 }
 
-section.new_customer .customer_information .phonebook i {
+section.new_customer .customer_information .phonebook i, section.new_customer .supplier_information .phonebook i {
   padding-right: 10px;
 }
 
-section.new_customer .customer_information .cus_inp_wrappers {
-  padding: 0px 0px;
+section.new_customer .customer_information .cus_inp_wrappers, section.new_customer .customer_information .sup_inp_wrappers, section.new_customer .supplier_information .cus_inp_wrappers, section.new_customer .supplier_information .sup_inp_wrappers {
   position: relative;
 }
 
-section.new_customer .customer_information .cus_inp_wrappers input {
+section.new_customer .customer_information .cus_inp_wrappers input, section.new_customer .customer_information .sup_inp_wrappers input, section.new_customer .supplier_information .cus_inp_wrappers input, section.new_customer .supplier_information .sup_inp_wrappers input {
   width: 100%;
   outline: none;
   border: 2px solid #cecece;
@@ -1010,7 +1083,7 @@ section.new_customer .customer_information .cus_inp_wrappers input {
   padding-left: 50px;
 }
 
-section.new_customer .customer_information .cus_inp_wrappers span {
+section.new_customer .customer_information .cus_inp_wrappers span, section.new_customer .customer_information .sup_inp_wrappers span, section.new_customer .supplier_information .cus_inp_wrappers span, section.new_customer .supplier_information .sup_inp_wrappers span {
   position: absolute;
   left: 22px;
   font-size: 18px;
@@ -1019,11 +1092,11 @@ section.new_customer .customer_information .cus_inp_wrappers span {
   background-color: #ffffff;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  top: 14px;
+  top: 13px;
   left: 50px;
 }
 
-section.new_customer .customer_information .cus_inp_wrappers input:focus + span {
+section.new_customer .customer_information .cus_inp_wrappers input:focus + span, section.new_customer .customer_information .sup_inp_wrappers input:focus + span, section.new_customer .supplier_information .cus_inp_wrappers input:focus + span, section.new_customer .supplier_information .sup_inp_wrappers input:focus + span {
   -webkit-transform: translateY(-23px) !important;
           transform: translateY(-23px) !important;
   padding: 0px 3px;
@@ -1031,7 +1104,7 @@ section.new_customer .customer_information .cus_inp_wrappers input:focus + span 
   font-weight: 600;
 }
 
-section.new_customer .customer_information .cus_inp_wrappers i.inp_icon {
+section.new_customer .customer_information .cus_inp_wrappers i.inp_icon, section.new_customer .customer_information .sup_inp_wrappers i.inp_icon, section.new_customer .supplier_information .cus_inp_wrappers i.inp_icon, section.new_customer .supplier_information .sup_inp_wrappers i.inp_icon {
   position: absolute;
   left: 22px;
   font-size: 18px;
@@ -1041,5 +1114,40 @@ section.new_customer .customer_information .cus_inp_wrappers i.inp_icon {
   -webkit-transition: 0.2s;
   transition: 0.2s;
   top: 14px;
+}
+
+section.new_customer .customer_information .cus_sub_btn, section.new_customer .customer_information .sup_sub_btn, section.new_customer .supplier_information .cus_sub_btn, section.new_customer .supplier_information .sup_sub_btn {
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 45px;
+  border-radius: 10px;
+  background-color: #cf2128;
+  color: #ffffff;
+  font-size: 20px;
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  width: 90%;
+}
+
+button.btn_active {
+  opacity: 1 !important;
+  pointer-events: inherit !important;
+}
+
+.cus_sup_info_display {
+  display: block !important;
+}
+
+section.top_back {
+  top: 0;
+}
+
+.new_done_display {
+  display: none !important;
 }
 /*# sourceMappingURL=style.css.map */

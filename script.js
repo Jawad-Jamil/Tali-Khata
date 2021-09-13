@@ -1,16 +1,26 @@
 let text_crt_acc = document.querySelector(".text_crt_acc")
-let text_placeholder = document.querySelector("#text_placeholder")
 let number_crt_acc = document.querySelector(".number_crt_acc")
+
+let pin_inp = document.querySelector(".pin_inp")
+let pin_inp_again = document.querySelector("#pin_inp2")
+
 let cus_add_inp = document.querySelector(".cus_add_inp")
-let cus_add_plchold = document.querySelector(".cus_add_plchold")
-let num_placeholder = document.querySelector("#num_placeholder")
+let cus_num_inp = document.querySelector(".cus_num_inp")
+let loan_cus_inp = document.querySelector(".loan_cus_inp")
+
+let sup_add_inp = document.querySelector(".sup_add_inp")
+let sup_num_inp = document.querySelector(".sup_num_inp")
+let loan_sup_inp = document.querySelector(".loan_sup_inp")
+
 let crt_sub_btn = document.querySelector("#crt_sub_btn")
+let pin_sub_btn = document.querySelector("#pin_sub_btn")
+let cus_sub_btn = document.querySelector(".cus_sub_btn")
+let sup_sub_btn = document.querySelector(".sup_sub_btn")
 
 let inp_for_plc = document.querySelectorAll(".inp_for_plc")
 let plc_for_inp = document.querySelectorAll(".plc_for_inp")
 
-// function plcholder() {
-console.log(inp_for_plc.length);
+
     for (let i = 0; i < inp_for_plc.length; i++) {
         let element = inp_for_plc[i];
 
@@ -18,56 +28,42 @@ console.log(inp_for_plc.length);
 
             if (element.value !== null && element.value!=="") {
                 plc_for_inp[i].setAttribute("style","transform: translateY(-23px);")
-                console.log();
             } else {
                 plc_for_inp[i].setAttribute("style","transform: translateY(0px);")
             }
 
+            // crt_btn active
+            if (text_crt_acc.value !== "" && number_crt_acc.value!== "") {
+                crt_sub_btn.classList.add("btn_active")
+            } else {
+                crt_sub_btn.classList.remove("btn_active")
+            }
+
+            // For Active Button (pin)
+            if (pin_inp.value == pin_inp_again.value && pin_inp.value !="" && pin_inp_again.value !="" ) {
+                pin_sub_btn.classList.add("btn_active")
+            } else {
+                pin_sub_btn.classList.remove("btn_active")
+            }
+
+            // customer_btn active
+            if (cus_add_inp.value !== "" && cus_num_inp.value!== "") {
+                cus_sub_btn.classList.add("btn_active")
+            } else {
+                cus_sub_btn.classList.remove("btn_active")
+            }
+
+            // supplier_btn active
+            if (sup_add_inp.value !== "" && sup_num_inp.value!== "") {
+                sup_sub_btn.classList.add("btn_active")
+            } else {
+                sup_sub_btn.classList.remove("btn_active")
+            }
+
+
         })
 
     }
-   
-// if (text_crt_acc.value !== null && text_crt_acc.value!=="") {
-//     text_placeholder.setAttribute("style","transform: translateY(-23px);")
-// } else {
-//     text_placeholder.setAttribute("style","transform: translateY(0px);")
-// }
-
-
-// if (number_crt_acc !== null && number_crt_acc.value!=="") {
-//     num_placeholder.setAttribute("style","transform: translateY(-23px);")
-// } else {
-//     num_placeholder.setAttribute("style","transform: translateY(0px);")
-// }
-
-// if (cus_add_inp !== null && cus_add_inp.value!=="") {
-//     cus_add_plchold.setAttribute("style","transform: translateY(-23px);")
-// } else {
-//     cus_add_plchold.setAttribute("style","transform: translateY(0px);")
-// }
-
-// // For Active Button
-// if (text_crt_acc.value!=="" && number_crt_acc.value!=="") {
-//     crt_sub_btn.classList.add("btn_active")
-// } else{
-//     crt_sub_btn.classList.remove("btn_active")
-// }
-
-
-// }
-
-
-// text_crt_acc.addEventListener("input",() =>{
-//     plcholder()
-// })
-
-// number_crt_acc.addEventListener("input",() =>{
-//     plcholder()
-// })
-
-// cus_add_inp.addEventListener("input",() =>{
-//     plcholder()
-// })
 
 
 let show_hide1 = document.querySelector(".show_hide1 i")
@@ -103,49 +99,6 @@ show_hide2.addEventListener("click",()=>{
 })
 
 
-let pin_inp = document.querySelector(".pin_inp")
-let pin_placeholder = document.querySelector(".pin_placeholder")
-let pin_inp_again = document.querySelector("#pin_inp2")
-let pin_placeholder_again = document.querySelector(".pin_placeholder_again")
-let pin_sub_btn = document.querySelector("#pin_sub_btn")
-
-function pin_plcholder() {
-
-    // For Active Button
-    if (pin_inp.value == pin_inp_again.value) {
-        pin_sub_btn.classList.add("btn_active")
-    } else {
-        pin_sub_btn.classList.remove("btn_active")
-    }
-
-    
-    if (pin_inp.value !== null && pin_inp.value!=="") {
-        pin_placeholder.setAttribute("style","transform: translateY(-23px);")
-    } else {
-        pin_placeholder.setAttribute("style","transform: translateY(0px);")
-        pin_sub_btn.classList.remove("btn_active")
-    }
-    
-    
-    if (pin_inp_again !== null && pin_inp_again.value!=="") {
-        pin_placeholder_again.setAttribute("style","transform: translateY(-23px);")
-    } else {
-        pin_placeholder_again.setAttribute("style","transform: translateY(0px);")
-        pin_sub_btn.classList.remove("btn_active")
-    }
-    
-}
-
-
-pin_inp.addEventListener("input",() =>{
-    pin_plcholder()
-})
-
-pin_inp_again.addEventListener("input",() =>{
-    pin_plcholder()
-})
-
-
 let setpinSec = document.querySelector("section.set_pin")
 let crtSec = document.querySelector("section.create_acc")
 let homeSec = document.querySelector("section.home_sec")
@@ -153,6 +106,10 @@ let name_taker = document.querySelector("#data_name_taker")
 let store_name = document.querySelector(".store_name")
 let store_num = document.querySelector(".store_num")
 let round_name = document.querySelector(".round_short_name")
+let new_cus_sup_overly = document.querySelector(".new_cus_sup_overly")
+let new_done_wrapper = document.querySelector(".new_done_wrapper")
+let done_ok_btn = document.querySelector(".done_ok_btn")
+let done_name_taker = document.querySelector(".done_name_taker")
 
 crt_sub_btn.addEventListener("click",() =>{
     localStorage.setItem('acc_name', [text_crt_acc.value] )
@@ -170,6 +127,71 @@ pin_sub_btn.addEventListener("click",()=>{
     localStorage.setItem('pin', pin_inp_again.value);
     setpinSec.setAttribute("style","transition: 0; display:none;")
     homeSec.setAttribute("style","right:0px;")
+})
+
+
+cus_sub_btn.addEventListener("click",()=>{
+    localStorage.setItem('new_customer_name', cus_add_inp.value);
+    localStorage.setItem('new_customer_num', cus_num_inp.value);
+    new_cus_sup_overly.classList.remove("new_done_display")
+    done_name_taker.innerHTML = `"${cus_add_inp.value}" - কে টালিতে যোগ করা হয়েছে`;
+})
+
+sup_sub_btn.addEventListener("click",()=>{
+    localStorage.setItem('new_suplier_name', sup_add_inp.value);
+    localStorage.setItem('new_suplier_num', sup_num_inp.value);
+    new_cus_sup_overly.classList.remove("new_done_display")
+    done_name_taker.innerHTML = `"${sup_add_inp.value}" - কে টালিতে যোগ করা হয়েছে`;
+})
+
+done_ok_btn.addEventListener("click",()=>{
+    new_customer_section.classList.remove("top_back")
+    new_cus_sup_overly.classList.add("new_done_display")
+
+    cus_add_inp.value = ""
+    cus_num_inp.value = ""
+    sup_add_inp.value = ""
+    sup_num_inp.value = ""
+
+
+    for (let i = 0; i < inp_for_plc.length; i++) {
+        let element = inp_for_plc[i];
+
+            if (element.value !== null && element.value!=="") {
+                plc_for_inp[i].setAttribute("style","transform: translateY(-23px);")
+            } else {
+                plc_for_inp[i].setAttribute("style","transform: translateY(0px);")
+            }
+
+            // crt_btn active
+            if (text_crt_acc.value !== "" && number_crt_acc.value!== "") {
+                crt_sub_btn.classList.add("btn_active")
+            } else {
+                crt_sub_btn.classList.remove("btn_active")
+            }
+
+            // For Active Button (pin)
+            if (pin_inp.value == pin_inp_again.value && pin_inp.value !="" && pin_inp_again.value !="" ) {
+                pin_sub_btn.classList.add("btn_active")
+            } else {
+                pin_sub_btn.classList.remove("btn_active")
+            }
+
+            // customer_btn active
+            if (cus_add_inp.value !== "" && cus_num_inp.value!== "") {
+                cus_sub_btn.classList.add("btn_active")
+            } else {
+                cus_sub_btn.classList.remove("btn_active")
+            }
+
+            // supplier_btn active
+            if (sup_add_inp.value !== "" && sup_num_inp.value!== "") {
+                sup_sub_btn.classList.add("btn_active")
+            } else {
+                sup_sub_btn.classList.remove("btn_active")
+            }
+
+    }
 })
 
 
@@ -305,13 +327,36 @@ for (let index = 0; index < 8;index++) {
     let customer = document.querySelector(".customer")
     let suplier = document.querySelector(".suplier")
     let cus_sup = document.querySelectorAll(".cus_sup_opt")
+    let customer_information = document.querySelector(".customer_information")
+    let suplier_information = document.querySelector(".supplier_information")
 
     customer.addEventListener("click", () =>{
         customer.classList.add("active")
         suplier.classList.remove("active")
+
+        customer_information.classList.add("cus_sup_info_display")
+        suplier_information.classList.remove("cus_sup_info_display")
+
     })
 
     suplier.addEventListener("click", () =>{
         suplier.classList.add("active")
         customer.classList.remove("active")
+
+        suplier_information.classList.add("cus_sup_info_display")
+        customer_information.classList.remove("cus_sup_info_display")
+    })
+
+
+
+    let add_customer = document.querySelector(".add_customer")
+    let top_backing_icon = document.querySelector(".top_backing_icon")
+    let new_customer_section = document.querySelector("section.new_customer")
+
+    add_customer.addEventListener("click",() => {
+        new_customer_section.classList.add("top_back")
+    })
+
+    top_backing_icon.addEventListener("click",() => {
+        new_customer_section.classList.remove("top_back")
     })
