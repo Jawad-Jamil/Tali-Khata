@@ -1,42 +1,74 @@
 let text_crt_acc = document.querySelector(".text_crt_acc")
 let text_placeholder = document.querySelector("#text_placeholder")
 let number_crt_acc = document.querySelector(".number_crt_acc")
+let cus_add_inp = document.querySelector(".cus_add_inp")
+let cus_add_plchold = document.querySelector(".cus_add_plchold")
 let num_placeholder = document.querySelector("#num_placeholder")
 let crt_sub_btn = document.querySelector("#crt_sub_btn")
 
-function plcholder() {
+let inp_for_plc = document.querySelectorAll(".inp_for_plc")
+let plc_for_inp = document.querySelectorAll(".plc_for_inp")
+
+// function plcholder() {
+console.log(inp_for_plc.length);
+    for (let i = 0; i < inp_for_plc.length; i++) {
+        let element = inp_for_plc[i];
+
+        element.addEventListener("input",() =>{
+
+            if (element.value !== null && element.value!=="") {
+                plc_for_inp[i].setAttribute("style","transform: translateY(-23px);")
+                console.log();
+            } else {
+                plc_for_inp[i].setAttribute("style","transform: translateY(0px);")
+            }
+
+        })
+
+    }
    
-if (text_crt_acc.value !== null && text_crt_acc.value!=="") {
-    text_placeholder.setAttribute("style","transform: translateY(-23px);")
-} else {
-    text_placeholder.setAttribute("style","transform: translateY(0px);")
-}
+// if (text_crt_acc.value !== null && text_crt_acc.value!=="") {
+//     text_placeholder.setAttribute("style","transform: translateY(-23px);")
+// } else {
+//     text_placeholder.setAttribute("style","transform: translateY(0px);")
+// }
 
 
-if (number_crt_acc !== null && number_crt_acc.value!=="") {
-    num_placeholder.setAttribute("style","transform: translateY(-23px);")
-} else {
-    num_placeholder.setAttribute("style","transform: translateY(0px);")
-}
+// if (number_crt_acc !== null && number_crt_acc.value!=="") {
+//     num_placeholder.setAttribute("style","transform: translateY(-23px);")
+// } else {
+//     num_placeholder.setAttribute("style","transform: translateY(0px);")
+// }
 
-// For Active Button
-if (text_crt_acc.value!=="" && number_crt_acc.value!=="") {
-    crt_sub_btn.classList.add("btn_active")
-} else{
-    crt_sub_btn.classList.remove("btn_active")
-}
+// if (cus_add_inp !== null && cus_add_inp.value!=="") {
+//     cus_add_plchold.setAttribute("style","transform: translateY(-23px);")
+// } else {
+//     cus_add_plchold.setAttribute("style","transform: translateY(0px);")
+// }
+
+// // For Active Button
+// if (text_crt_acc.value!=="" && number_crt_acc.value!=="") {
+//     crt_sub_btn.classList.add("btn_active")
+// } else{
+//     crt_sub_btn.classList.remove("btn_active")
+// }
 
 
-}
+// }
 
 
-text_crt_acc.addEventListener("input",() =>{
-    plcholder()
-})
+// text_crt_acc.addEventListener("input",() =>{
+//     plcholder()
+// })
 
-number_crt_acc.addEventListener("input",() =>{
-    plcholder()
-})
+// number_crt_acc.addEventListener("input",() =>{
+//     plcholder()
+// })
+
+// cus_add_inp.addEventListener("input",() =>{
+//     plcholder()
+// })
+
 
 let show_hide1 = document.querySelector(".show_hide1 i")
 let show_hide2 = document.querySelector(".show_hide2 i")

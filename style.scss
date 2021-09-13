@@ -834,6 +834,32 @@ section.new_customer{
 
         }
 
+        .cus_inp_wrappers{
+            padding: 0px 0px;
+            position: relative;
+
+            input{
+                @include inp_field();
+                padding-left: 50px;
+            }
+
+            span{
+                @include placeholder_span();
+                top: 14px;
+                left: 50px;
+            }
+
+            input:focus + span{
+                @include plcholder_spn_inp_foc();
+            }
+
+            i.inp_icon{
+                @include placeholder_span();
+                top: 14px;
+            }
+
+        }
+
         
     }
 }

@@ -23,11 +23,11 @@
             <div class="crt_acc_p"> <p>ব্যবহার শুরু করতে বা লগ ইন করতে মোবাইল নম্বর দিন</p></div>
         <form action="#">
             <div class="crt_acc_num">
-                <input class="text_crt_acc" type="text" min="3" max="60">
-                <span class="crt_placeholder" id="text_placeholder">ব্যবসা প্রতিষ্ঠানের নাম</span>
+                <input class="text_crt_acc inp_for_plc" type="text" min="3" max="60">
+                <span class="crt_placeholder plc_for_inp" id="text_placeholder">ব্যবসা প্রতিষ্ঠানের নাম</span>
 
-                <input class="number_crt_acc" type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;" />
-                <span class="crt_placeholder" id="num_placeholder">মোবাইল নম্বর</span>
+                <input class="number_crt_acc inp_for_plc" type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;" />
+                <span class="crt_placeholder plc_for_inp" id="num_placeholder">মোবাইল নম্বর</span>
             </div>
 
             <div class="crt_submit">
@@ -44,12 +44,12 @@
         <div class="set_pin_text"><p>আপনার তথ্য সুরক্ষিত রাখতে ডিজিট PIN তৈরি করুন ।</p></div>
 
         <div class="set_pin_inp_wrapper">
-            <input id="pin_inp1" class="pin_inp" type="password" min="3" max="20">
-            <span id="pin_placeholder1" class="pin_placeholder">পিন দিন</span>
+            <input id="pin_inp1" class="pin_inp inp_for_plc" type="password" min="3" max="20">
+            <span id="pin_placeholder1 plc_for_inp" class="pin_placeholder">পিন দিন</span>
             <span class="show_hide show_hide1"><i class="fas fa-eye-slash eye"></i></span>
 
-            <input id="pin_inp2" class="pin_inp" type="password" min="3" max="20">
-            <span id="pin_placeholder_again" class="pin_placeholder_again pin_plcholder">পুনরায় পিন দিন</span>
+            <input id="pin_inp2" class="pin_inp inp_for_plc" type="password" min="3" max="20">
+            <span id="pin_placeholder_again plc_for_inp" class="pin_placeholder_again pin_plcholder">পুনরায় পিন দিন</span>
             <span class="show_hide show_hide2"><i class="fas fa-eye-slash eye"></i></span>
         </div>
 
@@ -260,11 +260,26 @@
                 <p>ফোনবুক থেকে যোগ করি</p>
             </div>
 
-            <div class="cus_name_wrapper">
-                <input type="text">
-                <span>কাস্টমারের নাম</span>
-                <i class=""></i>
+            <div class="cus_name_wrapper cus_inp_wrappers">
+                <input class="cus_add_inp inp_for_plc" type="text">
+                <span class="plc_for_inp cus_add_plchold">কাস্টমারের নাম</span>
+                <i class="fas fa-user-plus inp_icon"></i>
             </div>
+
+            <div class="mobile_cus_wrapper cus_inp_wrappers">
+                <input type="text" class="inp_for_plc">
+                <span class="plc_for_inp">মোবাইল নম্বর</span>
+                <i class="fas fa-phone-alt inp_icon"></i>
+            </div>
+
+
+            <div class="loan_cus_wrapper cus_inp_wrappers">
+                <input type="text" class="inp_for_plc">
+                <span class="plc_for_inp">পূর্বের বাকি (জের)</span>
+                <i class="fas fa-dollar-sign inp_icon"></i>
+            </div>
+
+            <button class="">নিশ্চিত</button>
 
         </div>
     </section>

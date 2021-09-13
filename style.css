@@ -993,4 +993,53 @@ section.new_customer .customer_information .phonebook {
 section.new_customer .customer_information .phonebook i {
   padding-right: 10px;
 }
+
+section.new_customer .customer_information .cus_inp_wrappers {
+  padding: 0px 0px;
+  position: relative;
+}
+
+section.new_customer .customer_information .cus_inp_wrappers input {
+  width: 100%;
+  outline: none;
+  border: 2px solid #cecece;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 17px;
+  margin-bottom: 20px;
+  padding-left: 50px;
+}
+
+section.new_customer .customer_information .cus_inp_wrappers span {
+  position: absolute;
+  left: 22px;
+  font-size: 18px;
+  color: #757575;
+  pointer-events: none;
+  background-color: #ffffff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  top: 14px;
+  left: 50px;
+}
+
+section.new_customer .customer_information .cus_inp_wrappers input:focus + span {
+  -webkit-transform: translateY(-23px) !important;
+          transform: translateY(-23px) !important;
+  padding: 0px 3px;
+  color: #cf2128;
+  font-weight: 600;
+}
+
+section.new_customer .customer_information .cus_inp_wrappers i.inp_icon {
+  position: absolute;
+  left: 22px;
+  font-size: 18px;
+  color: #757575;
+  pointer-events: none;
+  background-color: #ffffff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  top: 14px;
+}
 /*# sourceMappingURL=style.css.map */
