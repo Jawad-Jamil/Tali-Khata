@@ -145,34 +145,22 @@ let tally_div = document.querySelector('.tally_foot')
 let cash_div = document.querySelector('.cash_foot')
 let inbx_div = document.querySelector('.inbx_foot')
 
-function footer_active() {
-    if (tally_div.classList.contains("foot_actv")) {
-        tally_div.classList.remove("foot_actv")
-        inbx_div.classList.remove("foot_actv")
-        cash_div.classList.add("foot_actv")
-
-    } else if (cash_div.classList.contains("foot_actv")) {
-        cash_div.classList.remove("foot_actv")
-        tally_div.classList.remove("foot_actv")
-        inbx_div.classList.add("foot_actv")
-    } else {
-        inbx_div.classList.remove("foot_actv")
-        tally_div.classList.add("foot_actv")
-        cash_div.classList.remove("foot_actv")
-    }
-    
-}
-
 tally_div.addEventListener("click",()=>{
-    footer_active()
+    tally_div.classList.add("foot_actv")
+    inbx_div.classList.remove("foot_actv")
+    cash_div.classList.remove("foot_actv")
 })
 
 cash_div.addEventListener("click",()=>{
-    footer_active()
+    tally_div.classList.remove("foot_actv")
+    inbx_div.classList.remove("foot_actv")
+    cash_div.classList.add("foot_actv")
 })
 
 inbx_div.addEventListener("click",()=>{
-    footer_active()
+    cash_div.classList.remove("foot_actv")
+    tally_div.classList.remove("foot_actv")
+    inbx_div.classList.add("foot_actv")
 })
 
 
@@ -284,20 +272,14 @@ for (let index = 0; index < 8;index++) {
 
     let customer = document.querySelector(".customer")
     let suplier = document.querySelector(".suplier")
-    let cus_sup = document.querySelectorAll(".cus_sup_opt");
+    let cus_sup = document.querySelectorAll(".cus_sup_opt")
 
+    customer.addEventListener("click", () =>{
+        customer.classList.add("active")
+        suplier.classList.remove("active")
+    })
 
-    cus_sup.forEach(element => {
-
-        element.addEventListener("click", ()=>{
-
-            if (customer.classList.contains('active') != true) {
-                customer.classList.add('active')
-                suplier.classList.remove('active')
-            } else{
-                customer.classList.remove('active')
-                suplier.classList.add('active')
-            }
-        })
-
-    });
+    suplier.addEventListener("click", () =>{
+        suplier.classList.add("active")
+        customer.classList.remove("active")
+    })
