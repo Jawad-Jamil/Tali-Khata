@@ -224,8 +224,12 @@ section.preloader_wrapper{
     top: 0px;
     left: 0px;
     right: 0px;
-    bottom: 0px;
+    height: 100%;
     z-index: 999999999999999999999;
+
+    img{
+    z-index: 999999999999999999999;
+    }
 }
 
 section.create_acc{
@@ -243,7 +247,7 @@ section.set_pin {
 section.home_sec{
     padding: 0px;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     top: 0px;
     right: 100%;
@@ -774,8 +778,8 @@ p.clicked_p{
 
 section.new_customer{
     position: absolute;
-    left: 0;
-    top: -120%;
+    left: -120%;
+    top: 0;
     width: 100%;
     height: 100%;
     background-color: $white;
@@ -796,7 +800,7 @@ section.new_customer{
         align-items: center;
 
         .new_done_wrapper {
-            height: 150px;
+            height: 180px;
             width: 80%;
             background-color: #ffffff;
             border-radius: 5px;
@@ -805,6 +809,8 @@ section.new_customer{
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            padding: 15px;
+            text-align: center;
 
             i{
                 font-size: 50px;
@@ -929,7 +935,7 @@ button.btn_active{
 }
 
 section.top_back{
-    top: 0;
+    left: 0;
 }
 
 .new_done_display{

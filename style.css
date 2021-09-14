@@ -199,7 +199,11 @@ section.preloader_wrapper {
   top: 0px;
   left: 0px;
   right: 0px;
-  bottom: 0px;
+  height: 100%;
+  z-index: 999999999999999999999;
+}
+
+section.preloader_wrapper img {
   z-index: 999999999999999999999;
 }
 
@@ -219,7 +223,7 @@ section.set_pin {
 section.home_sec {
   padding: 0px;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: absolute;
   top: 0px;
   right: 100%;
@@ -893,8 +897,8 @@ p.clicked_p {
 
 section.new_customer {
   position: absolute;
-  left: 0;
-  top: -120%;
+  left: -120%;
+  top: 0;
   width: 100%;
   height: 100%;
   background-color: #ffffff;
@@ -924,7 +928,7 @@ section.new_customer .new_cus_sup_overly {
 }
 
 section.new_customer .new_cus_sup_overly .new_done_wrapper {
-  height: 150px;
+  height: 180px;
   width: 80%;
   background-color: #ffffff;
   border-radius: 5px;
@@ -943,6 +947,8 @@ section.new_customer .new_cus_sup_overly .new_done_wrapper {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 15px;
+  text-align: center;
 }
 
 section.new_customer .new_cus_sup_overly .new_done_wrapper i {
@@ -1144,7 +1150,7 @@ button.btn_active {
 }
 
 section.top_back {
-  top: 0;
+  left: 0;
 }
 
 .new_done_display {
