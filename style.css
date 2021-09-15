@@ -321,6 +321,7 @@ section.home_sec .home_wrapper .content_home {
   width: 100%;
   top: 52px;
   height: calc(100% - 110px);
+  overflow-y: scroll;
 }
 
 section.home_sec .home_wrapper .content_home .home_overview {
@@ -464,6 +465,7 @@ section.home_sec .home_wrapper .content_home .user_list_wrapper .list_head .user
 section.home_sec .home_wrapper .content_home ul {
   list-style: none;
   padding: 10px 0px;
+  margin-bottom: 50px;
 }
 
 section.home_sec .home_wrapper .content_home ul li {
@@ -578,8 +580,8 @@ section.home_sec .home_wrapper .content_home .add_customer {
   padding: 9px 10px;
   border-radius: 25px;
   font-size: 18px;
-  position: absolute;
-  bottom: 20px;
+  position: fixed;
+  bottom: 80px;
   right: 20px;
 }
 
@@ -1410,5 +1412,23 @@ section.top_back {
 
 .dis_none {
   display: none;
+}
+
+.button_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.button_wrapper button {
+  height: 50px;
+  width: 50px;
+  font-size: 20px;
+  margin: 2px 0px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -17,6 +17,9 @@ let pin_sub_btn = document.querySelector("#pin_sub_btn")
 let cus_sub_btn = document.querySelector(".cus_sub_btn")
 let sup_sub_btn = document.querySelector(".sup_sub_btn")
 
+let pabo_tk = document.querySelector(".pabo_tk")
+let dibo_tk = document.querySelector(".dibo_tk")
+
 let inp_for_plc = document.querySelectorAll(".inp_for_plc")
 let plc_for_inp = document.querySelectorAll(".plc_for_inp")
 
@@ -113,6 +116,8 @@ let done_name_taker = document.querySelector(".done_name_taker")
 let home_features = document.querySelector(".home_features")
 let li_new_home_page = document.querySelector(".li_new_home_page")
 let cus_sup_ul = document.querySelector("#cus_sup_ul")
+let customer_amount = document.querySelector("#customer_amount")
+let suplier_amount = document.querySelector("#suplier_amount")
 
 crt_sub_btn.addEventListener("click",() =>{
     localStorage.setItem('acc_name', [text_crt_acc.value] )
@@ -132,74 +137,123 @@ pin_sub_btn.addEventListener("click",()=>{
     homeSec.setAttribute("style","right:0px;")
 })
 
-let customer_info = [
-]
-
-localStorage.setItem('customer_info', "[]")
-
 
 cus_sub_btn.addEventListener("click",()=>{
 
-    let old = [
-        localStorage.getItem('customer_info')
-    ]
+    if (localStorage.getItem('customer_info') === null) {
+        localStorage.setItem('customer_info', '[]')
+    }
 
-    customer_info.push(old)
-  
+    let old = JSON.parse(localStorage.getItem('customer_info'))
+
     
-    subarray = JSON.stringify({
+    cus_array = {
         cus_name: cus_add_inp.value,
         cus_number: cus_num_inp.value,
         cus_baki: loan_cus_inp.value
-    })
+    }
 
-    customer_info.push(subarray)
- 
+    old.push(cus_array)
 
-    localStorage.setItem('customer_info', customer_info);
+    localStorage.setItem('customer_info', JSON.stringify(old))
 
-    
     new_cus_sup_overly.classList.remove("new_done_display")
     done_name_taker.innerHTML = `"${cus_add_inp.value}" - কে টালিতে যোগ করা হয়েছে`;
     home_features.classList.add("new_done_display")
     li_new_home_page.classList.remove("new_done_display")
 
-    cus_sup_ul.innerHTML += `
+
+    let infos = JSON.parse(localStorage.getItem("customer_info"))
+    let new_li
+
+    for (let i = 0; i < infos.length; i++) {
+        const element = infos[i]
+
+        new_li  = `
     <li>
         <div class="left">
-            <div class="short_name_wrapper_cus">${cus_add_inp.value.slice(0,1)}</div>
-            <h4>${cus_add_inp.value}</h4>
+            <div class="short_name_wrapper_cus">${element.cus_name.slice(0,1)}</div>
+            <h4>${element.cus_name}</h4>
         </div>
 
         <div class="right">
-            <div class="each_money_hishab">${loan_cus_inp.value}</div>
+            <div class="each_money_hishab">${element.cus_baki}</div>
             <i class="fas fa-angle-right"></i>
         </div>
     </li>
     `
+    }
+
+    let data = parseFloat(loan_cus_inp.value)
+    let store = JSON.parse(localStorage.getItem('Total_pabo'))
+    localStorage.setItem('Total_pabo',data += store)
+    pabo_tk.innerHTML = localStorage.getItem('Total_pabo')
+
+
+    cus_sup_ul.innerHTML += new_li
+
+    customer_amount.innerHTML = infos.length
+
+
 })
 
 sup_sub_btn.addEventListener("click",()=>{
+
+    if (localStorage.getItem('suplier_info') === null) {
+        localStorage.setItem('suplier_info', '[]')
+    }
+
+    let sup_data = JSON.parse(localStorage.getItem('suplier_info'))
+
+    
+    sup_array = {
+        sup_name: sup_add_inp.value,
+        sup_number: sup_num_inp.value,
+        sup_baki: loan_sup_inp.value
+    }
+
+sup_data.push(sup_array)
+
+    localStorage.setItem('suplier_info', JSON.stringify(sup_data))
+
 
     new_cus_sup_overly.classList.remove("new_done_display")
     done_name_taker.innerHTML = `"${sup_add_inp.value}" - কে টালিতে যোগ করা হয়েছে`;
     home_features.classList.add("new_done_display")
     li_new_home_page.classList.remove("new_done_display")
 
-    cus_sup_ul.innerHTML += `
+    let infos = JSON.parse(localStorage.getItem("suplier_info"))
+    let new_li
+
+    for (let i = 0; i < infos.length; i++) {
+        const element = infos[i]
+
+        new_li  = `
     <li>
         <div class="left">
-            <div class="short_name_wrapper_sup">${sup_add_inp.value.slice(0,1)}</div>
-            <h4>${sup_add_inp.value}</h4>
+            <div class="short_name_wrapper_sup">${element.sup_name.slice(0,1)}</div>
+            <h4>${element.sup_name}</h4>
         </div>
 
         <div class="right">
-            <div class="each_money_hishab">${loan_sup_inp.value}</div>
+            <div class="each_money_hishab">${element.sup_baki}</div>
             <i class="fas fa-angle-right"></i>
         </div>
     </li>
     `
+    }
+
+    let data = parseFloat(loan_sup_inp.value)
+    let store = JSON.parse(localStorage.getItem('Total_dibo'))
+    localStorage.setItem('Total_dibo',data += store)
+    dibo_tk.innerHTML = localStorage.getItem('Total_dibo')
+
+    cus_sup_ul.innerHTML += new_li
+    
+    suplier_amount.innerHTML = infos.length
 })
+
+
 
 done_ok_btn.addEventListener("click",()=>{
     new_customer_section.classList.remove("top_back")
@@ -298,7 +352,76 @@ window.addEventListener('load', ()=>{
         homeSec.setAttribute("style","right:0px;")
     }
 
+
+    if (localStorage.getItem("customer_info") != undefined) {
+
+        home_features.classList.add("new_done_display")
+        li_new_home_page.classList.remove("new_done_display")
+        
+        let infos = JSON.parse(localStorage.getItem("customer_info"))
+
+        for (let i = 0; i < infos.length; i++) {
+            const element = infos[i]
+    
+            cus_sup_ul.innerHTML += `
+        <li>
+            <div class="left">
+                <div class="short_name_wrapper_cus">${element.cus_name.slice(0,1)}</div>
+                <h4>${element.cus_name}</h4>
+            </div>
+    
+            <div class="right">
+                <div class="each_money_hishab">${element.cus_baki}</div>
+                <i class="fas fa-angle-right"></i>
+            </div>
+        </li>
+        `
+        }
+
+        customer_amount.innerHTML = infos.length
+    }
+
+
+    if (localStorage.getItem("suplier_info") != undefined) {
+
+        home_features.classList.add("new_done_display")
+        li_new_home_page.classList.remove("new_done_display")
+
+        let infos = JSON.parse(localStorage.getItem("suplier_info"))
+        for (let i = 0; i < infos.length; i++) {
+            const element = infos[i]
+    
+            cus_sup_ul.innerHTML += `
+        <li>
+            <div class="left">
+                <div class="short_name_wrapper_sup">${element.sup_name.slice(0,1)}</div>
+                <h4>${element.sup_name}</h4>
+            </div>
+    
+            <div class="right">
+                <div class="each_money_hishab">${element.sup_baki}</div>
+                <i class="fas fa-angle-right"></i>
+            </div>
+        </li>
+        `
+        }
+        suplier_amount.innerHTML = infos.length
+    }
+
 })
+
+if (localStorage.getItem('Total_pabo') == undefined) {
+    pabo_tk.innerHTML = 00
+} else{
+    pabo_tk.innerHTML = localStorage.getItem('Total_pabo')
+}
+
+if (localStorage.getItem('Total_dibo') == undefined) {
+    dibo_tk.innerHTML = 00
+} else{
+    dibo_tk.innerHTML = localStorage.getItem('Total_dibo')
+}
+
 
 let ul = document.querySelector("#help_ul");
 
@@ -418,4 +541,87 @@ for (let index = 0; index < 8;index++) {
 
     top_backing_icon.addEventListener("click",() => {
         new_customer_section.classList.remove("top_back")
+    })
+
+// calculator calculator calculator calculator calculator calculator calculator calculator
+
+
+    let screen_cus = document.querySelector(".screen_cus")
+    let screen_sup = document.querySelector(".screen_sup")
+
+    let cal_btn1 = document.querySelectorAll(".cal_btn1")
+    let calculator_btn1 = document.querySelectorAll(".calculator_btn1")
+    let loan_spn_1 = document.querySelector(".loan_spn_1")
+    let clear1 = document.querySelector(".clear1")
+    let equal1 = document.querySelector(".equal1")
+    let button_wrapper1 = document.querySelector(".button_wrapper1")
+
+
+    screen_cus.addEventListener("focus",()=>{
+        button_wrapper1.classList.remove("new_done_display")
+    })
+
+    // screen_cus.addEventListener("blur",()=>{
+    //     button_wrapper1.classList.add("new_done_display")
+    // })
+
+
+    cal_btn1.forEach(i =>{
+
+        i.addEventListener("click", ()=>{
+            loan_spn_1.setAttribute("style", "transform: translateY(-23px) !important;")
+        })
+    })
+    
+    calculator_btn1.forEach(i =>{
+        i.addEventListener("click", ()=>{
+            screen_cus.value += i.innerHTML;
+        })
+    })
+
+    clear1.addEventListener("click",()=>{
+        screen_cus.value ='0'
+    })
+
+    equal1.addEventListener("click",()=>{
+        screen_cus.value = eval(screen_cus.value)
+    })
+
+
+    
+    let cal_btn2 = document.querySelectorAll(".cal_btn2")
+    let calculator_btn2 = document.querySelectorAll(".calculator_btn2")
+    let loan_spn_2 = document.querySelector(".loan_spn_2")
+    let clear2 = document.querySelector(".clear2")
+    let equal2 = document.querySelector(".equal2")
+    let button_wrapper2 = document.querySelector(".button_wrapper2")
+
+    screen_sup.addEventListener("focus",()=>{
+        button_wrapper2.classList.remove("new_done_display")
+    })
+
+    // screen_sup.addEventListener("blur",()=>{
+    //     button_wrapper2.classList.add("new_done_display")
+    // })
+ 
+
+    cal_btn2.forEach(i =>{
+
+        i.addEventListener("click", ()=>{
+            loan_spn_2.setAttribute("style", "transform: translateY(-23px) !important;")
+        })
+    })
+    
+    calculator_btn2.forEach(i =>{
+        i.addEventListener("click", ()=>{
+            screen_sup.value += i.innerHTML;
+        })
+    })
+
+    clear2.addEventListener("click",()=>{
+        screen_sup.value ='0'
+    })
+
+    equal2.addEventListener("click",()=>{
+        screen_sup.value = eval(screen_sup.value)
     })

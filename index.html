@@ -114,14 +114,14 @@
 
                         <div class="overview_money">
                             <div class="pabo">
-                                <h3 class="pabo_tk">145</h3>
+                                <h3 class="pabo_tk">00</h3>
                                 <p>মোট পাবো</p>
                             </div>
 
                             <div>|</div>
 
                             <div class="dibo">
-                                <h3 class="pabo_tk">45</h3>
+                                <h3 class="dibo_tk">00</h3>
                                 <p>মোট দিবো</p>
                             </div>
                         </div>
@@ -143,8 +143,8 @@
 
                         <div class="list_head">
                             <div class="user_amount">
-                                <p>কাস্টমার <span>2</span></p>
-                                <p>সাপ্লায়ার <span>3</span></p>
+                                <p>কাস্টমার <span id="customer_amount">0</span></p>
+                                <p>সাপ্লায়ার <span id="suplier_amount">0</span></p>
                             </div>
         
                             <div class="user_option">
@@ -348,9 +348,31 @@
 
 
             <div class="loan_cus_wrapper cus_inp_wrappers">
-                <input type="text" class="loan_cus_inp inp_for_plc">
-                <span class="plc_for_inp">পূর্বের বাকি (জের)</span>
+                <input type="text" class="loan_cus_inp inp_for_plc screen_cus">
+                <span class="plc_for_inp loan_spn_1">পূর্বের বাকি (জের)</span>
                 <i class="fas fa-dollar-sign inp_icon"></i>
+
+                <div class="button_wrapper1 button_wrapper new_done_display">
+                    <button class="clear1 cal_btn1">C</button>
+                    <button class="cal_btn1 calculator_btn1">+</button>
+                    <button class="cal_btn1 calculator_btn1">-</button>
+                    <button class="cal_btn1 calculator_btn1">*</button>
+                    <button class="cal_btn1 calculator_btn1">/</button>
+                    <button class="cal_btn1 calculator_btn1">%</button>
+                    <button class="cal_btn1 calculator_btn1">1</button>
+                    <button class="cal_btn1 calculator_btn1">2</button>
+                    <button class="cal_btn1 calculator_btn1">3</button>
+                    <button class="cal_btn1 calculator_btn1">4</button>
+                    <button class="cal_btn1 calculator_btn1">5</button>
+                    <button class="cal_btn1 calculator_btn1">6</button>
+                    <button class="cal_btn1 calculator_btn1">7</button>
+                    <button class="cal_btn1 calculator_btn1">8</button>
+                    <button class="cal_btn1 calculator_btn1">9</button>
+                    <button class="cal_btn1 calculator_btn1">0</button>
+                    <button class="cal_btn1 calculator_btn1">.</button>
+                    <button class="equal1 cal_btn1">=</button>
+                </div>
+
             </div>
 
             <button class="cus_sub_btn">নিশ্চিত</button>
@@ -379,9 +401,31 @@
 
 
             <div class="loan_sup_wrapper sup_inp_wrappers">
-                <input type="text" class="loan_sup_inp inp_for_plc">
-                <span class="plc_for_inp">পূর্বের বাকি (জের)</span>
+                <input type="text" class="loan_sup_inp inp_for_plc screen_sup">
+                <span class="plc_for_inp loan_spn_2">পূর্বের বাকি (জের)</span>
                 <i class="fas fa-dollar-sign inp_icon"></i>
+
+                <div class="button_wrapper2 button_wrapper new_done_display">
+                    <button class="clear2 cal_btn2">C</button>
+                    <button class="cal_btn2 calculator_btn2">+</button>
+                    <button class="cal_btn2 calculator_btn2">-</button>
+                    <button class="cal_btn2 calculator_btn2">*</button>
+                    <button class="cal_btn2 calculator_btn2">/</button>
+                    <button class="cal_btn2 calculator_btn2">%</button>
+                    <button class="cal_btn2 calculator_btn2">1</button>
+                    <button class="cal_btn2 calculator_btn2">2</button>
+                    <button class="cal_btn2 calculator_btn2">3</button>
+                    <button class="cal_btn2 calculator_btn2">4</button>
+                    <button class="cal_btn2 calculator_btn2">5</button>
+                    <button class="cal_btn2 calculator_btn2">6</button>
+                    <button class="cal_btn2 calculator_btn2">7</button>
+                    <button class="cal_btn2 calculator_btn2">8</button>
+                    <button class="cal_btn2 calculator_btn2">9</button>
+                    <button class="cal_btn2 calculator_btn2">0</button>
+                    <button class="cal_btn2 calculator_btn2">.</button>
+                    <button class="equal2 cal_btn2">=</button>
+                </div>
+
             </div>
 
             <button class="sup_sub_btn">নিশ্চিত</button>
