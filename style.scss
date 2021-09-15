@@ -70,6 +70,15 @@ $ash: #f4f4f4;
     align-items: center;
 }
 
+@mixin round_name {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    @include flex();
+    justify-content: center;
+    text-transform: uppercase;
+}
+
 
 .preloader_wrapper{
     img{
@@ -312,9 +321,155 @@ section.home_sec{
         .content_home{
             position: absolute;
             width: 100%;
-            top: 53px;
-            bottom: 60px;
+            top: 52px;
+            height: calc(100% - 110px);
 
+            .home_overview{
+                padding: 20px 40px;
+                background-color: #ffe2e2;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+
+            .overview_money{
+                padding: 0px 30px;
+                @include flex();
+                text-align: center;
+                padding-bottom: 8px;
+
+                .pabo , .dibo{
+                    p{
+                        color: #5a5a5a;
+                    }
+
+                    h3{
+                        color: #B82329;
+                        font-weight: 700
+                    }
+                }
+
+            }
+
+            .bottom_overview{
+                @include flex();
+                padding: 10px 25px;
+                border-radius: 8px;
+                border: 1px solid $border;
+                border-radius: 8px;
+                background-color: $white;
+            } 
+
+            }
+
+            .user_list_wrapper{
+                padding: 15px 20px;
+                overflow: scroll;
+                height: 75%;
+
+                .list_head{
+                    @include flex();
+
+                    div:not(.user_amount){
+                    @include flex();
+                    }
+
+                    .user_amount{
+                        p{
+                            font-size: 18px;
+                            color: #7a7a7a;
+                        }
+                    }
+
+                    .user_option{
+                        *{
+                            color: $main;
+                            font-size: 14px;
+                        }
+
+                        i.fas.fa-arrow-down {
+                            background-color: #ffe2e2;
+                            width: 35px;
+                            height: 35px;
+                            border-radius: 50%;
+                            text-align: center;
+                            line-height: 35px;
+                            margin: 0px 5px;
+                        }
+
+                        .tagada {
+                            background-color: #ffe2e2;
+                            margin: 0px 5px;
+                            padding: 10px 15px;
+                            border-radius: 30px;
+                            font-weight: 800;
+                            i{
+                                padding-right: 5px;
+                            }
+                        }
+
+                        div.pabo_debo {
+                            font-weight: 600;
+                            *{
+                                font-size: 16px;
+                            }
+                            .pabo_debo-debo{
+                                color: $black;
+                            }
+                        }
+
+                    }
+
+                }
+            }
+
+
+            ul{
+                list-style: none;
+                padding: 10px 0px;
+
+                li{
+                    @include flex();
+                    border-bottom: 2px dashed #dadada;
+                    padding: 10px 0px;
+
+                    *{
+                        @include flex();
+                    }
+
+                    .left{
+                        .short_name_wrapper_cus{
+                            @include round_name();
+                            background-color: #F88A34;
+                            color: $white;
+                            height: 40px;
+                            width: 40px;
+                            margin-right: 10px;
+                        }
+
+                        .short_name_wrapper_sup{
+                            @include round_name();
+                            background-color: #005C99;
+                            color: $white;
+                            height: 40px;
+                            width: 40px;
+                            margin-right: 10px;
+                        }
+
+                    }
+
+                    .right{
+                        .each_money_hishab{
+                            color: $main;
+                            font-weight: 700;
+                            font-size: 18px;
+                        }
+
+                        i{
+                            color: #8a8a8a;
+                            padding-left: 20px;
+                        }
+                    }
+                }
+            }
 
             .add_customer{
                 color: white;
@@ -686,13 +841,7 @@ p.clicked_p{
 
         .round_short_name{
             background-color: #FCCD29;
-            height: 50px;
-            width: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-transform: uppercase;
+            @include round_name();
         }
     }
 
@@ -940,4 +1089,8 @@ section.top_back{
 
 .new_done_display{
     display: none !important;
+}
+
+.dis_none{
+    display: none;
 }

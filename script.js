@@ -110,6 +110,9 @@ let new_cus_sup_overly = document.querySelector(".new_cus_sup_overly")
 let new_done_wrapper = document.querySelector(".new_done_wrapper")
 let done_ok_btn = document.querySelector(".done_ok_btn")
 let done_name_taker = document.querySelector(".done_name_taker")
+let home_features = document.querySelector(".home_features")
+let li_new_home_page = document.querySelector(".li_new_home_page")
+let cus_sup_ul = document.querySelector("#cus_sup_ul")
 
 crt_sub_btn.addEventListener("click",() =>{
     localStorage.setItem('acc_name', [text_crt_acc.value] )
@@ -129,19 +132,73 @@ pin_sub_btn.addEventListener("click",()=>{
     homeSec.setAttribute("style","right:0px;")
 })
 
+let customer_info = [
+]
+
+localStorage.setItem('customer_info', "[]")
+
 
 cus_sub_btn.addEventListener("click",()=>{
-    localStorage.setItem('new_customer_name', cus_add_inp.value);
-    localStorage.setItem('new_customer_num', cus_num_inp.value);
+
+    let old = [
+        localStorage.getItem('customer_info')
+    ]
+
+    customer_info.push(old)
+  
+    
+    subarray = JSON.stringify({
+        cus_name: cus_add_inp.value,
+        cus_number: cus_num_inp.value,
+        cus_baki: loan_cus_inp.value
+    })
+
+    customer_info.push(subarray)
+ 
+
+    localStorage.setItem('customer_info', customer_info);
+
+    
     new_cus_sup_overly.classList.remove("new_done_display")
     done_name_taker.innerHTML = `"${cus_add_inp.value}" - কে টালিতে যোগ করা হয়েছে`;
+    home_features.classList.add("new_done_display")
+    li_new_home_page.classList.remove("new_done_display")
+
+    cus_sup_ul.innerHTML += `
+    <li>
+        <div class="left">
+            <div class="short_name_wrapper_cus">${cus_add_inp.value.slice(0,1)}</div>
+            <h4>${cus_add_inp.value}</h4>
+        </div>
+
+        <div class="right">
+            <div class="each_money_hishab">${loan_cus_inp.value}</div>
+            <i class="fas fa-angle-right"></i>
+        </div>
+    </li>
+    `
 })
 
 sup_sub_btn.addEventListener("click",()=>{
-    localStorage.setItem('new_suplier_name', sup_add_inp.value);
-    localStorage.setItem('new_suplier_num', sup_num_inp.value);
+
     new_cus_sup_overly.classList.remove("new_done_display")
     done_name_taker.innerHTML = `"${sup_add_inp.value}" - কে টালিতে যোগ করা হয়েছে`;
+    home_features.classList.add("new_done_display")
+    li_new_home_page.classList.remove("new_done_display")
+
+    cus_sup_ul.innerHTML += `
+    <li>
+        <div class="left">
+            <div class="short_name_wrapper_sup">${sup_add_inp.value.slice(0,1)}</div>
+            <h4>${sup_add_inp.value}</h4>
+        </div>
+
+        <div class="right">
+            <div class="each_money_hishab">${loan_sup_inp.value}</div>
+            <i class="fas fa-angle-right"></i>
+        </div>
+    </li>
+    `
 })
 
 done_ok_btn.addEventListener("click",()=>{
@@ -152,6 +209,8 @@ done_ok_btn.addEventListener("click",()=>{
     cus_num_inp.value = ""
     sup_add_inp.value = ""
     sup_num_inp.value = ""
+    loan_sup_inp.value = ""
+    loan_cus_inp.value = ""
 
 
     for (let i = 0; i < inp_for_plc.length; i++) {
@@ -226,7 +285,7 @@ window.addEventListener('load', ()=>{
         if (preloader.style.display = "none") {
             document.querySelector(".create_acc").setAttribute("style","display: block;")
         }
-    }, 3000 );
+    }, 3 );
 
     if (localStorage.getItem("acc_name") != undefined && localStorage.getItem("pin") != undefined) {
         name_taker.innerHTML = localStorage.getItem("acc_name")

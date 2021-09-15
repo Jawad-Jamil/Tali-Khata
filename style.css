@@ -319,8 +319,252 @@ section.home_sec .home_wrapper .header_home .head_help_wrapper .help_text {
 section.home_sec .home_wrapper .content_home {
   position: absolute;
   width: 100%;
-  top: 53px;
-  bottom: 60px;
+  top: 52px;
+  height: calc(100% - 110px);
+}
+
+section.home_sec .home_wrapper .content_home .home_overview {
+  padding: 20px 40px;
+  background-color: #ffe2e2;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+section.home_sec .home_wrapper .content_home .home_overview .overview_money {
+  padding: 0px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+section.home_sec .home_wrapper .content_home .home_overview .overview_money .pabo p, section.home_sec .home_wrapper .content_home .home_overview .overview_money .dibo p {
+  color: #5a5a5a;
+}
+
+section.home_sec .home_wrapper .content_home .home_overview .overview_money .pabo h3, section.home_sec .home_wrapper .content_home .home_overview .overview_money .dibo h3 {
+  color: #B82329;
+  font-weight: 700;
+}
+
+section.home_sec .home_wrapper .content_home .home_overview .bottom_overview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 25px;
+  border-radius: 8px;
+  border: 1px solid #cecece;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+section.home_sec .home_wrapper .content_home .user_list_wrapper {
+  padding: 15px 20px;
+  overflow: scroll;
+  height: 75%;
+}
+
+section.home_sec .home_wrapper .content_home .user_list_wrapper .list_head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.home_sec .home_wrapper .content_home .user_list_wrapper .list_head div:not(.user_amount) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.home_sec .home_wrapper .content_home .user_list_wrapper .list_head .user_amount p {
+  font-size: 18px;
+  color: #7a7a7a;
+}
+
+section.home_sec .home_wrapper .content_home .user_list_wrapper .list_head .user_option * {
+  color: #cf2128;
+  font-size: 14px;
+}
+
+section.home_sec .home_wrapper .content_home .user_list_wrapper .list_head .user_option i.fas.fa-arrow-down {
+  background-color: #ffe2e2;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 35px;
+  margin: 0px 5px;
+}
+
+section.home_sec .home_wrapper .content_home .user_list_wrapper .list_head .user_option .tagada {
+  background-color: #ffe2e2;
+  margin: 0px 5px;
+  padding: 10px 15px;
+  border-radius: 30px;
+  font-weight: 800;
+}
+
+section.home_sec .home_wrapper .content_home .user_list_wrapper .list_head .user_option .tagada i {
+  padding-right: 5px;
+}
+
+section.home_sec .home_wrapper .content_home .user_list_wrapper .list_head .user_option div.pabo_debo {
+  font-weight: 600;
+}
+
+section.home_sec .home_wrapper .content_home .user_list_wrapper .list_head .user_option div.pabo_debo * {
+  font-size: 16px;
+}
+
+section.home_sec .home_wrapper .content_home .user_list_wrapper .list_head .user_option div.pabo_debo .pabo_debo-debo {
+  color: #222222;
+}
+
+section.home_sec .home_wrapper .content_home ul {
+  list-style: none;
+  padding: 10px 0px;
+}
+
+section.home_sec .home_wrapper .content_home ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 2px dashed #dadada;
+  padding: 10px 0px;
+}
+
+section.home_sec .home_wrapper .content_home ul li * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.home_sec .home_wrapper .content_home ul li .left .short_name_wrapper_cus {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-transform: uppercase;
+  background-color: #F88A34;
+  color: #ffffff;
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+}
+
+section.home_sec .home_wrapper .content_home ul li .left .short_name_wrapper_sup {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-transform: uppercase;
+  background-color: #005C99;
+  color: #ffffff;
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+}
+
+section.home_sec .home_wrapper .content_home ul li .right .each_money_hishab {
+  color: #cf2128;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+section.home_sec .home_wrapper .content_home ul li .right i {
+  color: #8a8a8a;
+  padding-left: 20px;
 }
 
 section.home_sec .home_wrapper .content_home .add_customer {
@@ -799,6 +1043,13 @@ p.clicked_p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1155,5 +1406,9 @@ section.top_back {
 
 .new_done_display {
   display: none !important;
+}
+
+.dis_none {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */
