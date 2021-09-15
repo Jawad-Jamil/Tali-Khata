@@ -135,6 +135,7 @@ pin_sub_btn.addEventListener("click",()=>{
     localStorage.setItem('pin', pin_inp_again.value);
     setpinSec.setAttribute("style","transition: 0; display:none;")
     homeSec.setAttribute("style","right:0px;")
+    add_customer.style.display = "inline-flex";
 })
 
 
@@ -339,7 +340,7 @@ window.addEventListener('load', ()=>{
         if (preloader.style.display = "none") {
             document.querySelector(".create_acc").setAttribute("style","display: block;")
         }
-    }, 3 );
+    }, 3000 );
 
     if (localStorage.getItem("acc_name") != undefined && localStorage.getItem("pin") != undefined) {
         name_taker.innerHTML = localStorage.getItem("acc_name")
@@ -350,6 +351,7 @@ window.addEventListener('load', ()=>{
         crtSec.setAttribute("style","display: none; padding: 0;")
         setpinSec.setAttribute("style","display: none; padding: 0;")
         homeSec.setAttribute("style","right:0px;")
+        add_customer.style.display = "inline-flex";
     }
 
 

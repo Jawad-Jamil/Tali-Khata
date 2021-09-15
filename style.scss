@@ -1,6 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
 @font-face {
     font-family: "SolaimanLipi";
     src: url("/Fonts/SolaimanLipi_29-05-06.ttf");
@@ -10,7 +10,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "SolaimanLipi",sans-serif;
+    font-family: 'Hind Siliguri', sans-serif;
 }
 
 $border: #cecece;
@@ -476,7 +476,7 @@ section.home_sec{
             .add_customer{
                 color: white;
                 background-color: #b82329;
-                display: inline-flex;
+                display: none;
                 flex-wrap: wrap;
                 padding: 9px 10px;
                 border-radius: 25px;
