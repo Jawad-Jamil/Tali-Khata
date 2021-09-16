@@ -20,6 +20,9 @@ let sup_sub_btn = document.querySelector(".sup_sub_btn")
 let pabo_tk = document.querySelector(".pabo_tk")
 let dibo_tk = document.querySelector(".dibo_tk")
 
+let button_wrapper1 = document.querySelector(".button_wrapper1")
+let button_wrapper2 = document.querySelector(".button_wrapper2")
+
 let inp_for_plc = document.querySelectorAll(".inp_for_plc")
 let plc_for_inp = document.querySelectorAll(".plc_for_inp")
 
@@ -259,7 +262,8 @@ sup_data.push(sup_array)
 done_ok_btn.addEventListener("click",()=>{
     new_customer_section.classList.remove("top_back")
     new_cus_sup_overly.classList.add("new_done_display")
-
+    button_wrapper1.classList.add("new_done_display")
+    button_wrapper2.classList.add("new_done_display")
     cus_add_inp.value = ""
     cus_num_inp.value = ""
     sup_add_inp.value = ""
@@ -556,7 +560,6 @@ for (let index = 0; index < 8;index++) {
     let loan_spn_1 = document.querySelector(".loan_spn_1")
     let clear1 = document.querySelector(".clear1")
     let equal1 = document.querySelector(".equal1")
-    let button_wrapper1 = document.querySelector(".button_wrapper1")
 
 
     screen_cus.addEventListener("focus",()=>{
@@ -596,7 +599,6 @@ for (let index = 0; index < 8;index++) {
     let loan_spn_2 = document.querySelector(".loan_spn_2")
     let clear2 = document.querySelector(".clear2")
     let equal2 = document.querySelector(".equal2")
-    let button_wrapper2 = document.querySelector(".button_wrapper2")
 
     screen_sup.addEventListener("focus",()=>{
         button_wrapper2.classList.remove("new_done_display")

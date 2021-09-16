@@ -318,6 +318,11 @@ section.home_sec .home_wrapper .content_home {
   top: 52px;
   height: calc(100% - 110px);
   overflow-y: scroll;
+  /* width */
+}
+
+section.home_sec .home_wrapper .content_home::-webkit-scrollbar {
+  width: 0px;
 }
 
 section.home_sec .home_wrapper .content_home .home_overview {
@@ -378,8 +383,6 @@ section.home_sec .home_wrapper .content_home .home_overview .bottom_overview {
 
 section.home_sec .home_wrapper .content_home .user_list_wrapper {
   padding: 15px 20px;
-  overflow: scroll;
-  height: 75%;
 }
 
 section.home_sec .home_wrapper .content_home .user_list_wrapper .list_head {
@@ -1008,10 +1011,11 @@ p.clicked_p {
   z-index: 99;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  /* width */
 }
 
-.left_menu .left_menu_wrapper {
-  overflow-y: scroll;
+.left_menu::-webkit-scrollbar {
+  width: 0px;
 }
 
 .left_menu .profile_info_wrapper {
@@ -1416,13 +1420,14 @@ section.top_back {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-top: -10px;
 }
 
 .button_wrapper button {
-  height: 40px;
-  width: 15%;
+  width: 16%;
   font-size: 20px;
-  margin: 3px 0px;
+  margin: 5px 0px;
   margin-top: 0px;
+  height: 35px;
 }
 /*# sourceMappingURL=style.css.map */

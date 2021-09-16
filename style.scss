@@ -320,6 +320,10 @@ section.home_sec{
             top: 52px;
             height: calc(100% - 110px);
             overflow-y: scroll;
+                /* width */
+            &::-webkit-scrollbar {
+                width: 0px;
+            }
 
             .home_overview{
                 padding: 20px 40px;
@@ -359,8 +363,6 @@ section.home_sec{
 
             .user_list_wrapper{
                 padding: 15px 20px;
-                overflow: scroll;
-                height: 75%;
 
                 .list_head{
                     @include flex();
@@ -828,10 +830,11 @@ p.clicked_p{
     z-index: 99;
     transition: 0.5s;
 
-
-    .left_menu_wrapper{
-        overflow-y: scroll;
+    /* width */
+    &::-webkit-scrollbar {
+        width: 0px;
     }
+
 
     .profile_info_wrapper{
         @include flex();
@@ -1096,13 +1099,15 @@ section.top_back{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: -10px;
     
     button {
-        height: 40px;
-        width: 15%;
+        width: 16%;
         font-size: 20px;
-        margin: 3px 0px;
+        margin: 5px 0px;
         margin-top: 0px;
+        height: 35px;
+    
     }
 
 } 
