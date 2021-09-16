@@ -1,10 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
-@font-face {
-    font-family: "SolaimanLipi";
-    src: url("/Fonts/SolaimanLipi_29-05-06.ttf");
-}
 
 *{
     margin: 0;
@@ -129,12 +125,12 @@ section.create_acc , section.set_pin {
 
     span#num_placeholder, .pin_placeholder_again {
         @include placeholder_span();
-        top: 80px;
+        top: 87px;
     }
 
     span#text_placeholder , .pin_placeholder{
         @include placeholder_span();
-        top: 14px;
+        top: 12px;
     }
 
     input.number_crt_acc:focus +  #num_placeholder , input.text_crt_acc:focus + #text_placeholder{
@@ -951,7 +947,6 @@ section.new_customer{
         align-items: center;
 
         .new_done_wrapper {
-            height: 180px;
             width: 80%;
             background-color: #ffffff;
             border-radius: 5px;
@@ -1103,10 +1098,11 @@ section.top_back{
     justify-content: space-between;
     
     button {
-    height: 50px;
-    width: 50px;
-    font-size: 20px;
-    margin: 2px 0px;
+        height: 40px;
+        width: 15%;
+        font-size: 20px;
+        margin: 3px 0px;
+        margin-top: 0px;
     }
 
 } 
